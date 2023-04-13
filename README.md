@@ -192,10 +192,15 @@ TableView {
 
 ## 参考资料
 
-皮肤切换实现：
-解析歌词：；
-歌词显示：
-窗口宽高调整：
+皮肤切换实现：[玩转Qml(3)-换皮肤 | 涛哥的博客](https://jaredtao.github.io/2019/05/12/玩转Qml(3)-换皮肤/#带三角形尖尖的弹窗组件)
+
+解析歌词：[基于Qt的网络音乐播放器（五）实现歌词滚动显示_qt歌词滚动_花狗Fdog的博客-CSDN博客](https://blog.csdn.net/Fdog_/article/details/108053624)；[QML中ListView向上滚动效果_hp_cpp的博客-CSDN博客](https://blog.csdn.net/hp_cpp/article/details/96159979)
+
+歌词显示：[QML中ListView向上滚动效果_hp_cpp的博客-CSDN博客](https://blog.csdn.net/hp_cpp/article/details/96159979)
+
+窗口宽高调整：[QML中ListView向上滚动效果_hp_cpp的博客-CSDN博客](https://blog.csdn.net/hp_cpp/article/details/96159979)
+
+
 
 
 
