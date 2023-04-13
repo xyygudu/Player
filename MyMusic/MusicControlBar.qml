@@ -188,7 +188,7 @@ Item {
                 imageHoverColor: "white"
                 hoverColor: Qt.darker(Skin.mainColor, 1.2)
                 onClicked: {
-                    if (root.playMode === root.order) {
+                    if (root.playMode === root.order) { // 如果是顺序播放
                         if (root.seclectedRow !== -1) {
                             if (root.seclectedRow === myMusicPlayer.musicTableModel.rowCount()-1) {
                                 root.seclectedRow = 0
@@ -248,7 +248,7 @@ Item {
         onSourceChanged: {
             musicPlayer.play()
         }
-        onStopped: {
+        onStopped: { // 实现播放完成后自动切换下一首
             // 刚播放完和下一曲刚加载完成还没开始播放时都是处于stop状态
             if (musicPlayer.position !== 0) {  // position!==0说明是上一曲播放完成的状态，此时如果是顺序循环播放，则自动切换下一曲
                 if (root.playMode === root.order) {

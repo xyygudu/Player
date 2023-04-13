@@ -66,11 +66,20 @@ Item {
             source: myVideoPlayer.getVideoPathByRow(root.selectedRow)
         }
 
+        // 暂时没有什么可以实现，用个Rectangle占位
         Rectangle {
             id: bottomItem
             anchors.left: parent.left
             anchors.right: parent.right
             height: parent.height-header.height-videoPlayer.height
+            color: Skin.background
+            Text {
+                text: "可以放置视频的总览信息"
+                font.pixelSize: 30
+                font.family: Config.fontFamily
+                color: Skin.textColor
+                anchors.centerIn: parent
+            }
         }
 
     }
