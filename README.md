@@ -198,7 +198,7 @@ TableView {
 
 歌词显示：[QML中ListView向上滚动效果_hp_cpp的博客-CSDN博客](https://blog.csdn.net/hp_cpp/article/details/96159979)
 
-窗口宽高调整：[QML中ListView向上滚动效果_hp_cpp的博客-CSDN博客](https://blog.csdn.net/hp_cpp/article/details/96159979)
+窗口宽高调整：[qml 去除标题栏后 拖动窗口和改变窗口大小_qml 去标题无法移动_林兴南的博客-CSDN博客](https://blog.csdn.net/weixin_43387612/article/details/108534373)
 
 
 
