@@ -213,6 +213,32 @@ Item {
                 source: "qrc:/source/icons/volume_empty.png"
                 imageColor: Skin.currentTheme===1?Skin.textColor:Skin.mainColor
                 imageHoverColor: Qt.darker(imageColor, 1.2)
+
+                onClicked: {
+                    if (volumeBubble.popupVisible === true) {
+                        volumeBubble.hide()
+                    } else {
+                        volumeBubble.show()
+                    }
+                }
+
+                CusWidgets.Bubble {
+                    id: volumeBubble
+                    barColor: Skin.currentTheme !== 1?Qt.darker(Skin.background, 1.1):Qt.lighter(Skin.background, 1.8)
+                    backgroundWidth: 40
+                    backgroundHeight: 120
+                    trianglePos: triangleBottom
+                    contentItem: CusWidgets.CusVSlider {
+                        height: 12
+                        value: 0.8
+                        onPositionChanged: {
+                            if (musicPlayer.muted) {
+                                musicPlayer.muted = !mediaplayer.muted
+                            }
+                            musicPlayer.volume = value
+                        }
+                    }
+                }
             }
         }
     }
