@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.1, 2023-04-13T13:02:04. -->
+<!-- Written by QtCreator 7.0.1, 2023-04-26T13:19:47. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -243,8 +243,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:F:/QtProjects/Player01/Player01.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/QtProjects/Player01/Player01.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Player012</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:F:/QtProjects/Player/Player01.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/QtProjects/Player/Player01.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

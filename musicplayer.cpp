@@ -68,7 +68,7 @@ int MusicPlayer::getLyricIdxByPosition(qint64 pos)
      QMap<qint64, int>::iterator iter = m_lyric2IdxMap.begin();
      while (iter != m_lyric2IdxMap.end())
      {
-         if ((iter.key()-500<=pos)  && (iter+1).key()-500 > pos)
+         if ((iter.key()-50<=pos)  && (iter+1).key()-50 > pos)
          {
              return iter.value();
          }

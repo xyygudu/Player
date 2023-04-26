@@ -10,6 +10,8 @@ Rectangle {
     id: root
     height: 80
     property real sliderValue: 0
+    signal brightnessChanged(real value)
+    signal contrastChanged(real value)
     gradient: Gradient {
         GradientStop {  position: 0.0; color: "transparent"  }
         GradientStop {  position: 1.0; color: "black" }
@@ -117,6 +119,78 @@ Rectangle {
                     }
                 }
             }
+
+            // 调节亮度
+            CusWidgets.ImageButton {
+                id: brightnessBtn
+                width: controlPanel.btnWidth
+                imageColor: controlPanel.iconColor
+                imageHoverColor: Qt.lighter(controlPanel.iconColor, 1.2)
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.right: volumeItem.left
+                source: "qrc:/source/icons/brightness.png"
+                onClicked: {
+                    if (brightnessBubble.popupVisible === true) {
+                        brightnessBubble.hide()
+                    } else {
+                        brightnessBubble.show()
+                    }
+                }
+
+                CusWidgets.Bubble {
+                    id: brightnessBubble
+                    barColor: Skin.currentTheme !== 1?Qt.darker(Skin.background, 1.1):Qt.lighter(Skin.background, 1.8)
+                    backgroundWidth: 40
+                    backgroundHeight: 120
+                    trianglePos: triangleBottom
+                    contentItem: CusWidgets.CusVSlider {
+                        from: -1
+                        value: 0
+                        to: 1
+                        height: parent.height
+                        onValueChanged: {
+                            brightnessChanged(value)
+                        }
+                    }
+                }
+            }
+
+            // 调节对比度
+            CusWidgets.ImageButton {
+                id: contrastBtn
+                width: controlPanel.btnWidth
+                imageColor: controlPanel.iconColor
+                imageHoverColor: Qt.lighter(controlPanel.iconColor, 1.2)
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.right: brightnessBtn.left
+                source: "qrc:/source/icons/contrast.png"
+
+                onClicked: {
+                    if (contrastBubble.popupVisible === true) {
+                        contrastBubble.hide()
+                    } else {
+                        contrastBubble.show()
+                    }
+                }
+
+                CusWidgets.Bubble {
+                    id: contrastBubble
+                    barColor: Skin.currentTheme !== 1?Qt.darker(Skin.background, 1.1):Qt.lighter(Skin.background, 1.8)
+                    backgroundWidth: 40
+                    backgroundHeight: 120
+                    trianglePos: triangleBottom
+                    contentItem: CusWidgets.CusVSlider {
+                        from: -1
+                        value: 0
+                        to: 1
+                        height: parent.height
+                        onValueChanged: {
+                            contrastChanged(value)
+                        }
+                    }
+                }
+            }
+
         }
     }
 

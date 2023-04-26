@@ -13,8 +13,11 @@ Item {
     property real backgroundHeight: 160
     property color borderColor:  barColor
     property real borderWidth: 0
+    readonly property int triangleBottom: 0
+    readonly property int triangleTop: 1
+    property int trianglePos: triangleTop
 
-    property real verticalOffset: 20
+    property real verticalOffset: 5
     //矩形旋转45度，一半被toolTip遮住(重合)，另一半三角形和ToolTip组成一个带箭头的ToolTip
     Rectangle {
         id: bar
@@ -25,9 +28,7 @@ Item {
         color: barColor
         //水平居中
         anchors.horizontalCenter: parent.horizontalCenter
-        //垂直方向上，由ToolTip的y值，决定位置
-        anchors.verticalCenter: parent.bottom
-        anchors.verticalCenterOffset: verticalOffset
+        y: trianglePos === triangleTop ? parent.height+verticalOffset: -height-verticalOffset
     }
     Popup {
         id: popup
@@ -43,7 +44,7 @@ Item {
     }
     function show() {
         popup.x = (root.width - popup.width) / 2
-        popup.y = root.height + verticalOffset
+        popup.y = trianglePos === triangleTop ? root.height+bar.height/2+verticalOffset : -popup.height-bar.height/2-verticalOffset
         popupVisible = true
     }
     function hide() {

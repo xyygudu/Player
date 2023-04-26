@@ -18,14 +18,14 @@ Slider {
          implicitHeight: control.sliderWidth
          width: control.availableWidth
          height: implicitHeight
-         radius: 2
+         radius: height / 2
          color: "#bdbebf"
          // 已经划过的部分
          Rectangle {
              width: control.visualPosition * parent.width
              height: parent.height
              color: Skin.mainColor
-             radius: 2
+             radius: height / 2
          }
      }
 

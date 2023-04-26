@@ -1,4 +1,5 @@
 #include "musictablemodel.h"
+#include "fileutil.h"
 #include <QDateTime>
 
 MusicTableModel::MusicTableModel(QObject *parent)
@@ -53,7 +54,7 @@ QVariant MusicTableModel::data(const QModelIndex &index, int role) const
         // 视频文件名称
         case 1: return m_datas.at(row).baseName();
         // 文件大小
-        case 2: return QString::number(m_datas.at(row).size() / 1024 / 1024,'f',2) + "MB";
+        case 2: return FileUtil::instance()->convertByteTo(m_datas.at(row).size());
         // 创建日期
         case 3: return m_datas.at(row).birthTime().toString("yyyy-MM-dd hh:mm:ss");
         }

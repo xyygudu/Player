@@ -56,5 +56,8 @@
         <file>TitleBar/SkinPopWindow.qml</file>
         <file>Setting/SettingPanel.qml</file>
         <file>MyMusic/LyricsPanel.qml</file>
+        <file>source/icons/contrast.png</file>
+        <file>source/icons/brightness.png</file>
+        <file>CusWidgets/CusVSlider.qml</file>
     </qresource>
 </RCC>

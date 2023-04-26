@@ -15,6 +15,7 @@ public:
     }
 
     QFileInfoList getFiles(const QString& dirPath, const QStringList& fliters);
+    QString convertByteTo(qint64 size);
 
 signals:
 
