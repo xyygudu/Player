@@ -5,7 +5,9 @@
 ## 实现的功能
 
 视频相关：播放暂停、播放进度调节、音量调节、列表显示指定目录下的视频文件
+
 音频相关：播放暂停、上一曲下一曲、随机播放和顺序播放、播放进度调节、歌词滚动以及高亮、列表显示指定目录下的音频文件
+
 其他功能：支持皮肤切换、窗口最大化最小化、窗口任意形状调节、窗口移动、边框阴影
 
 ## 主窗口总体布局
@@ -63,6 +65,7 @@ VideoPlayer {
 ### 实现思路
 
 播放音频实现：音频列表通过TableView实现，其代理（delegate）要显示的数据来自musicplayer.h的`m_musicTableModel`，当双击列表某一行时，触发MusicTable.qml中自定义的信号`doubleClicked(int row)`，该信号把双击的行号传给MusicControlBar.qml（控制音频播放等页面），这样MusicControlBar.qml就可以根据行号调用C++函数获取当前双击行对应的视频路径，因此就可以实现视频的播放
+
 上一曲/下一曲实现：MusicControlBar.qml有上一曲下一曲按钮，实现切歌只需要改变MusicControlBar.qml的`seclectedRow`属性即可，`seclectedRow`记录当前播放的音乐在列表的哪一行。当点击下一曲后，将`seclectedRow`增加1即可，不需要其他操作，因为`MediaPlayer`（位于MusicControlBar.qml中）的`source`属性是和`seclectedRow`是相互绑定的，只要`seclectedRow`改变，`MediaPlayer`的`source`也会相应改变，而`source`的改变又会触发`onSourceChanged`信号，`onSourceChanged`实现了音频的播放，主要代码如下：
 
 ```javascript
@@ -198,7 +201,7 @@ TableView {
 
 歌词显示：[QML中ListView向上滚动效果_hp_cpp的博客-CSDN博客](https://blog.csdn.net/hp_cpp/article/details/96159979)
 
-窗口宽高调整：[QML中ListView向上滚动效果_hp_cpp的博客-CSDN博客](https://blog.csdn.net/hp_cpp/article/details/96159979)
+窗口宽高调整：[qml 去除标题栏后 拖动窗口和改变窗口大小_qml 去标题无法移动_林兴南的博客-CSDN博客](https://blog.csdn.net/weixin_43387612/article/details/108534373)
 
 
 
