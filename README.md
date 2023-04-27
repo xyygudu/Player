@@ -1,3 +1,7 @@
+## 环境
+
+windows Qt 5.15
+
 ## 部分效果展示
 
 ![效果展示.gif](https://cdn.nlark.com/yuque/0/2023/gif/27222704/1681373940432-30118fcb-9b83-442d-b6f9-627c54f6f58a.gif#averageHue=%23cd987b&clientId=uc27c9835-07ee-4&from=paste&height=664&id=ue65df901&name=%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.gif&originHeight=830&originWidth=1362&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=1981286&status=done&style=none&taskId=u85382fb7-28b1-40b7-b594-236af694f7c&title=&width=1089.6)
