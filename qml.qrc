@@ -59,5 +59,6 @@
         <file>source/icons/contrast.png</file>
         <file>source/icons/brightness.png</file>
         <file>CusWidgets/CusVSlider.qml</file>
+        <file>CusWidgets/CusCombox.qml</file>
     </qresource>
 </RCC>

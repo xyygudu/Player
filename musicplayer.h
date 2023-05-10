@@ -4,6 +4,7 @@
 #include <QObject>
 #include "musictablemodel.h"
 #include "lyricmodel.h"
+#include "httputil.h"
 
 class MusicPlayer : public QObject
 {
@@ -20,9 +21,16 @@ public:
     Q_INVOKABLE void updateMusicModel(const QString& path);
     Q_INVOKABLE QString getMusicPathByRow(int row);
     Q_INVOKABLE QString getMusicNameByRow(int row);
+    Q_INVOKABLE QString getSingerNameByRow(int row);
+    Q_INVOKABLE int getMusicIdByRow(int row);
     Q_INVOKABLE void upDateLyricModelBy(int row);
     // 通过音乐播放的position和当前歌词的时间相比较，得到最终要显示歌词的index
     Q_INVOKABLE int getLyricIdxByPosition(qint64 pos);
+    Q_INVOKABLE void searchMusicOnline(QString content);
+
+
+    // 播放模式发生改变
+    Q_INVOKABLE void setMode(int mode);
 
     MusicTableModel *musicTableModel() const;
 
@@ -32,6 +40,8 @@ public:
     LyricModel *lyricModel() const;
 
     const QMap<qint64, int> &lyric2IdxMap() const;
+public slots:
+    void parseMusicsFromJson(QJsonObject totalObject);
 
 signals:
 
@@ -42,6 +52,7 @@ private:
     LyricModel *m_lyricModel;
     QString m_currentPath;      // 记录当前播放音乐的路径
     QMap<qint64, int> m_lyric2IdxMap; // 把音乐播放到的时间点和歌词的索引联系起来
+    HttpUtil *m_httpUtil;
 
 };
 

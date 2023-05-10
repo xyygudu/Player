@@ -23,9 +23,6 @@ public:
 private:
     QStringList m_lyricList;
 
-    // QAbstractItemModel interface
-public:
-
 };
 
 #endif // LYRICMODEL_H

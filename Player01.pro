@@ -8,6 +8,7 @@ RC_ICONS = source/icons/player.ico
 
 SOURCES += \
         fileutil.cpp \
+        httputil.cpp \
         lyricmodel.cpp \
         lyrics.cpp \
         main.cpp \
@@ -31,6 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     fileutil.h \
+    httputil.h \
     lyricmodel.h \
     lyrics.h \
     musicplayer.h \

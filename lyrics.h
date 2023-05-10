@@ -11,11 +11,13 @@ public:
 
     explicit Lyrics(QObject *parent = nullptr);
     // 解析歌词，把歌词变成QMap<qint64, int>形式，qint64表示当前歌曲播放的位置，int表示对应歌词的索引
-    static void parseLyrics(QString path, QMap<qint64, int> &lyric2IdxMap, LyricModel *lyricModel);
+    static void parseLyricsFromFile(QString path, QMap<qint64, int> &lyric2IdxMap, LyricModel *lyricModel);
+    static void parseLyricsFromMusicId(int musicId, QMap<qint64, int> &lyric2IdxMap, LyricModel *lyricModel);
 
 signals:
 private:
-    QString m_path;
+    static void parseLyrics(QString allLyricStr, QMap<qint64, int> &lyric2IdxMap, LyricModel *lyricModel);
+
 };
 
 #endif // LYRICS_H

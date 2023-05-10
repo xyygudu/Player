@@ -52,7 +52,8 @@ Rectangle {
             preferredHighlightEnd: height / 2 + 10
             highlightRangeMode: ListView.StrictlyEnforceRange
             clip: true
-            currentIndex: lyricIndex===-1?currentIndex:lyricIndex
+            currentIndex: lyricIndex===-1?currentIndex:lyricIndex  // -1表示当前没有要显示的歌词，没有歌词显示就显示当前显示的那一句歌词
+
             delegate: Text {
                 id: lyric
                 text: display

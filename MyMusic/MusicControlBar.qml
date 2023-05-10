@@ -65,7 +65,7 @@ Item {
             font.pixelSize: 18
             elide: Text.ElideRight   // 文字过长就用省略号代替
             leftPadding: 10
-            text: root.seclectedRow===-1?"请选择音乐":myMusicPlayer.getMusicNameByRow(root.seclectedRow)
+            text: myMusicPlayer.getMusicNameByRow(root.seclectedRow)
         }
         Text {
             id: singerName
@@ -78,7 +78,7 @@ Item {
             font.family: Config.fontFamily
             elide: Text.ElideRight   // 文字过长就用省略号代替
             leftPadding: 10
-            text: root.seclectedRow === -1 ?"未知歌手":"未知歌手"
+            text: myMusicPlayer.getSingerNameByRow(root.seclectedRow)
         }
     }
 

@@ -18,6 +18,7 @@ Item {
             path: myMusicPlayer.currentPath
             onSearchClicked: {
                 // 处理搜索按钮点击事件
+                myMusicPlayer.searchMusicOnline(content)
             }
             onChoosePathClicked: {
                 // c++中的函数：把所选择路径下的音频信息更新到model中
@@ -32,6 +33,7 @@ Item {
             anchors.right: parent.right
             height: parent.height - musicPanelHeader.height
             onDoubleClicked: {
+                myMusicPlayer.upDateLyricModelBy(row)
                 musicControlBar.seclectedRow = row
             }
         }
@@ -49,9 +51,6 @@ Item {
             } else {
                 lyricsPanel.visible = true
             }
-        }
-        onSeclectedRowChanged: {
-            myMusicPlayer.upDateLyricModelBy(seclectedRow)
         }
     }
     // 歌词界面

@@ -18,13 +18,13 @@ Item {
         color: Skin.background
         Row {
             Repeater {
-                model: root.columnWidths.length  // 使用tableView.column会出现Model size of -1 is less than 0
+                model: myMusicPlayer.musicTableModel.headerDatas  // 使用tableView.column会出现Model size of -1 is less than 0
                 Rectangle {
                     width: tableView.columnWidthProvider(index)+tableView.columnSpacing
                     height: tableHeader.height
                     color: "transparent"
                     Text {
-                        text: myMusicPlayer.musicTableModel.headerData(index, Qt.Horizontal)
+                        text: modelData
                         anchors.left: parent.left
                         width: parent.width-15
                         anchors.verticalCenter: parent.verticalCenter
@@ -98,7 +98,7 @@ Item {
                 onClicked: {
                     tableView.selectedRow = model.row
                 }
-                // 双击某行则触发信号，便于播放视频
+                // 双击某行则触发信号，便于播放
                 onDoubleClicked: {
                     root.doubleClicked(model.row)
                 }
